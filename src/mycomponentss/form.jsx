@@ -75,7 +75,14 @@ class Form extends Component {
                     <input type="password" value={password} onChange={this.handlepasswordChange}></input>
                 </div>
 				
-				<button type="submit"><li><Link to={"/display"  } >submit</Link></li></button>
+				<button type="submit"><li><Link  
+				to={ { 
+ 					 pathname: "/display/", 
+ 					 fname: this.state.firstname, 
+					  lname : this.state.name,
+					  password : this.state.password
+
+} } >submit</Link></li></button>
 			</form></div>
 		)
 	}
