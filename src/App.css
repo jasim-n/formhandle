@@ -1,7 +1,21 @@
 .App {
   text-align: center;
 }
+li {
+  list-style-type: none;
+  
+}
+input{
+  margin-left: 15px;
 
+}
+input[type="email"]{
+  margin-left: 47px;
+}
+
+a{
+  text-decoration: none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

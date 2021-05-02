@@ -33,13 +33,18 @@ class Form extends Component {
 			password: event.target.value
 		})
 	}
-
-
-	handleSubmit = event => {
-		alert(`${this.state.name} ${this.state.password} ${this.state.ab}`)
-        
-		event.preventDefault()
+	handleEmailChange = event => {
+		this.setState({
+			email: event.target.value
+		})
 	}
+
+
+	// handleSubmit = event => {
+	// 	alert(`${this.state.name} ${this.state.password} ${this.state.ab}`)
+        
+	// 	event.preventDefault()
+	// }
    
 
 	render() {
@@ -52,8 +57,9 @@ class Form extends Component {
             
             textAlign: "center",
 
-        };
-		const { firstname, name, password} = this.state
+        }
+		
+		const { firstname, name,email, password} = this.state
        
 		return (
             <div >
@@ -70,12 +76,23 @@ class Form extends Component {
                     <label>Last name</label>
                     <input type="text" value={name} onChange={this.handleLastNameChange}></input>
                 </div>
+				<div>
+                    <label >Email</label>
+                    <input type="email" value={email} onChange={this.handleEmailChange}></input>
+                </div>
                 <div>
                     <label>password</label>
                     <input type="password" value={password} onChange={this.handlepasswordChange}></input>
                 </div>
 				
-				<button type="submit"><li><Link to={"/display"  } >submit</Link></li></button>
+				<button type="submit"><li><Link to={ { 
+ 					 pathname: "/display/", 
+ 					 fname: this.state.firstname, 
+					  lname : this.state.name,
+					  email:this.state.email,
+					  password : this.state.password
+
+} } >submit</Link></li></button>
 			</form></div>
 		)
 	}
